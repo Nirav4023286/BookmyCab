@@ -1,0 +1,180 @@
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-1">
+</div>
+  <div class="col-xs-5" style="margin-top:20px;">
+    <p style="padding:0px;margin:0px;" class="lead">Driver Details</p>
+<hr style="margin-top:0px;border-top: 1px solid #ccc;">
+    <div class="row">
+
+    <div class="form-group">
+      <input type="text" class="form-control" id="Fname" placeholder="First Name" ng-model="Driver.FirstName" />
+</div>
+
+
+<div class="form-group">
+  <input type="text" class="form-control" id="Lname" placeholder="Last Name" ng-model="Driver.LastName" />
+</div>
+
+<div class="form-group">
+  <textarea class="form-control" rows="5" id="address" placeholder="Address" ng-model="Driver.Address" ></textarea>
+</div>
+
+<div class="form-group">
+  <input type="text" class="form-control" id="mobile" placeholder="Contact No" ng-model="Driver.MobileNo" />
+</div>
+
+<div class="form-group">
+  <input type="text" class="form-control" id="email" placeholder="Email Address" ng-model="Driver.Email" />
+</div>
+
+<div class="form-group">
+  <input type="text" class="form-control" id="license" placeholder="License No." ng-model="Driver.LicenseNo" />
+</div>
+
+</div>
+<p style="padding:0px;margin:0px;" class="lead">Cab Details</p>
+<hr style="margin-top:0px;border-top: 1px solid #ccc;">
+<div class="row">
+<div class="form-group">
+  <select class="form-control" id="cabtype" ng-model="Driver.CabType">
+<option>Micro</option>
+<option>Mini</option>
+<option>Prime Sedan</option>
+<option>Prime SUV</option>
+
+
+</select>
+</div>
+<div class="form-group">
+  <input type="text" class="form-control" id="make" placeholder="Make" ng-model="Driver.Make" />
+</div>
+<div class="form-group">
+  <input type="text" class="form-control" id="model" placeholder="Model" ng-model="Driver.Model" />
+</div>
+<div class="form-group">
+  <input type="text" class="form-control" id="registration" placeholder="Registration No." ng-model="Driver.RegisterNo" />
+</div>
+</div>
+
+<button type="button" class="btn btn-success btn-sm" ng-click="AddCab()">Submit Details</button>
+
+
+
+
+
+  </div>
+
+  <div class="col-xs-offset-1 col-xs-5" style="margin-top:20px;">
+
+<table class="table table-bordered">
+<tr>
+
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Edit</th>
+<th>Delete</th>
+
+</tr>
+<tr ng-repeat="d in DriverData">
+
+  <td>{{d.FirstName}}</td>
+  <td>{{d.Email}}</td>
+  <td>{{d.MobileNo}}</td>
+  <td><button class="btn btn-warning btn-xs" ng-click="GetDriver(d)" data-toggle="modal" data-target="#myModal3"><span class="glyphicon glyphicon-edit"></span></button></td>
+  <td><button class="btn btn-danger btn-xs" ng-click="DeleteCab(d,$event)"><span class="glyphicon glyphicon-trash"></span></button></td>
+</tr>
+</table>
+  </div>
+
+  <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Update Driver Details</h4>
+        </div>
+        <div class="modal-body">
+
+          <p style="padding:0px;margin:0px;" class="lead text-center">Driver Details</p>
+      <hr style="margin-top:0px;border-top: 1px solid #ccc;">
+
+          <div class="row">
+<div class="col-xs-offset-1 col-xs-10 col-xs-offset-1">
+          <div class="form-group">
+            <input type="text" class="form-control" id="UFname" placeholder="First Name" ng-model="getDriver[0].FirstName" />
+      </div>
+
+
+      <div class="form-group">
+        <input type="text" class="form-control" id="ULname" placeholder="Last Name" ng-model="getDriver[0].LastName" />
+      </div>
+
+      <div class="form-group">
+        <textarea class="form-control" rows="5" id="Uaddress" placeholder="Address" ng-model="getCab[0].Address" ></textarea>
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" id="Umobile" placeholder="Contact No" ng-model="getDriver[0].MobileNo" />
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" id="Uemail" placeholder="Email Address" ng-model="getDriver[0].Email" />
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" id="Ulicense" placeholder="License No." ng-model="getCab[0].LicenseNo" />
+      </div>
+</div>
+      </div>
+      <p style="padding:0px;margin:0px;" class="lead text-center">Cab Details</p>
+      <hr style="margin-top:0px;border-top: 1px solid #ccc;">
+      <div class="row">
+        <div class="col-xs-offset-1 col-xs-10 col-xs-offset-1">
+      <div class="form-group">
+        <select class="form-control" id="Ucabtype" ng-model="getCab[0].CabType">
+      <option>Micro</option>
+      <option>Mini</option>
+      <option>Prime Sedan</option>
+      <option>Prime SUV</option>
+
+
+      </select>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="Umake" placeholder="Make" ng-model="getCab[0].Make" />
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="Umodel" placeholder="Model" ng-model="getCab[0].Model" />
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="Uregistration" placeholder="Registration No." ng-model="getCab[0].RegisterNo" />
+      </div>
+      </div>
+
+
+
+
+
+
+
+        </div>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="UpdateCabDetails()">Update</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+</div>
+</div>

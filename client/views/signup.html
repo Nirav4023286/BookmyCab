@@ -1,0 +1,19 @@
+
+<div class="container">
+<flash-message duration="5000"show-close="true" on-dismiss="myCallback(flash);"></flash-message>
+
+<form class="msform">
+	<fieldset>
+		<h2 class="fs-title">Create your account</h2>
+		<input type="text" placeholder="FirstName" ng-model="Customer.FirstName" />
+		<input type="text" placeholder="LastName" ng-model="Customer.LastName" />
+		<input type="text" placeholder="MobileNo" ng-model="Customer.MobileNo" />
+		<input type="text" placeholder="Email" ng-model="Customer.Email" />
+		<input type="password" placeholder="Password" ng-model="Customer.Password" />
+		<input type="button" class="submit action-button" value="SignUp" ng-click="SaveCustomer()"/>
+
+		          
+	</fieldset>
+
+</form>
+</div>

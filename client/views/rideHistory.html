@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <center><h3><u>My Rides</u></h3></center>
+<br /><br />
+<table class="table table-striped table-hover table-bordered table-responsive" ng-init="initRides()">
+  <tr>
+
+    <th class="col-xs-2">Pickup Location</th>
+  <th class="col-xs-2">Destination Location</th>
+  <th class="col-xs-1">Fare</th>
+<th class="col-xs-2">Ride Date</th>
+  <th class="col-xs-2">Driver Name</th>
+  <th class="col-xs-1">Distance(in km)</th>
+  <th class="col-xs-2">Booking Type</th>
+</tr>
+<tr ng-repeat="ride in Rides">
+  <td>{{ride.PickupLocation}}</td>
+<td>{{ride.DestinationLocation}}</td>
+<td>{{ride.Fare}}</td>
+<td>{{ride.PickupDate}}</td>
+<td>{{ride.Driver.FirstName}}</td>
+<td>{{ride.Distance}}</td>
+<td>{{ride.BookingType}}</td>
+</tr>
+
+
+
+</table>
+</div>

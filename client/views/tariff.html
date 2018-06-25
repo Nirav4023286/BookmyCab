@@ -1,0 +1,183 @@
+
+<div class="container">
+
+<br /><br />
+  <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal1">Add Tariff</button>
+
+
+
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Tariff Plan</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <select name="cabType"  class="form-control" id="cabType" ng-model="Tariff.CabType">
+
+              <option>Micro</option>
+              <option>Mini</option>
+              <option>Prime Sedan</option>
+              <option>Prime SUV</option>
+            </select><br />
+          </div>
+
+
+  <div class="form-group">
+            <label for="peakhour">Start Peak Hour:</label>
+  <input type='text' id="StartPeakHour" class="form-control" ng-model="Tariff.StartPeakTime"  />
+
+
+
+
+
+
+
+              <br />
+
+          </div>
+
+
+          <div class="form-group">
+                      <label for="peakhour">Stop Peak Hour:</label>
+                      <input type='text' class="form-control" id="StopPeakHour" ng-model="Tariff.StopPeakTime"/>
+  <br />
+  </div>
+
+                    <div class="form-group">
+                      <label>Normal Hour Rate/Km:</label><input type="number" id="normalrate" class="form-control" ng-model="Tariff.NormalRate" />
+
+
+                    </div>
+
+                    <div class="form-group">
+                      <label>Peak Hour Rate/Km:</label><input type="number" id="peakrate" class="form-control" ng-model="Tariff.PeakRate" />
+
+
+                    </div>
+
+
+
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="AddTariff()">Save</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Tariff Plan</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <select name="cabType"  class="form-control" id="UcabType" ng-model="getTariff.data.CabType">
+
+              <option>Micro</option>
+              <option>Mini</option>
+              <option>Prime Sedan</option>
+              <option>Prime SUV</option>
+            </select><br />
+          </div>
+
+
+  <div class="form-group">
+            <label for="peakhour">Start Peak Hour:</label>
+  <input type='text' name='timepicker' id="UStartPeakHour" class="form-control" ng-model="getTariff.data.StartPeakTime"  />
+
+
+
+
+
+
+
+              <br />
+
+          </div>
+
+
+          <div class="form-group">
+                      <label for="peakhour">Stop Peak Hour:</label>
+                      <input type='text' id="UStopPeakHour" name='timepicker' class="form-control" ng-model="getTariff.data.StopPeakTime"/>
+  <br />
+  </div>
+
+                    <div class="form-group">
+                      <label>Normal Hour Rate/Km:</label><input type="number" id="Unormalrate" class="form-control" ng-model="getTariff.data.NormalRate" />
+
+
+                    </div>
+
+                    <div class="form-group">
+                      <label>Peak Hour Rate/Km:</label><input type="number" id="Upeakrate" class="form-control" ng-model="getTariff.data.PeakRate" />
+
+
+                    </div>
+
+
+
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="UpdateTariff()">Save</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+<div>
+
+
+
+</div>
+  <table style="margin:5px" class="table table-bordered ">
+    <tr>
+
+      <th>Cab Type</th>
+      <th>Normal Rate/Km</th>
+      <th>Peak Rate/Km</th>
+      <th>Start PeakTime</th>
+      <th>Stop PeakTime</th>
+      <th>Edit</th>
+      <th>Delete</th>
+</tr>
+<tr ng-repeat="t in TariffData">
+    <td>{{t.CabType}}</td>
+    <td>{{t.NormalRate}}</td>
+    <td>{{t.PeakRate}}</td>
+    <td>{{t.StartPeakTime}}</td>
+    <td>{{t.StopPeakTime}}</td>
+    <td><button class="btn btn-warning btn-xs" ng-click="GetTariff(t)" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-edit"></span></button></td>
+    <td><button class="btn btn-danger btn-xs" ng-click="DeleteTariff(t,$event)"><span class="glyphicon glyphicon-trash"></span></button></td>
+</tr>
+</table>
+
+  </div>

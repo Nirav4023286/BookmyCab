@@ -1,0 +1,276 @@
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
+* {margin: 0; padding: 0;}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: montserrat, arial, verdana;
+	height: 100%;
+
+
+}
+
+.msform {
+	width: 400px;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+.msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	position: absolute;
+	background-color: #f55858;
+}
+.msform fieldset:not(:first-of-type) {
+	display: none;
+}
+
+.msform input, .msform textarea {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+
+
+
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	    color: #fcf8e3;
+	margin-bottom: 10px;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+
+.alert .alert-link {
+  font-weight: bold;
+}
+
+.alert > p,
+.alert > ul {
+  margin-bottom: 0;
+}
+
+.alert > p + p {
+  margin-top: 5px;
+}
+
+.alert-dismissable,
+.alert-dismissible {
+  padding-right: 35px;
+}
+
+.alert-dismissable .close,
+.alert-dismissible .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-success hr {
+  border-top-color: #c9e2b3;
+}
+
+.alert-success .alert-link {
+  color: #2b542c;
+}
+
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.alert-info hr {
+  border-top-color: #a6e1ec;
+}
+
+.alert-info .alert-link {
+  color: #245269;
+}
+
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+
+.alert-warning hr {
+  border-top-color: #f7e1b5;
+}
+
+.alert-warning .alert-link {
+  color: #66512c;
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.alert-danger hr {
+  border-top-color: #e4b9c0;
+}
+
+.alert-danger .alert-link {
+  color: #843534;
+}
+
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+
+button.close {
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.alert.ng-leave {
+    opacity: 1;
+    transition: opacity 1.5s ease-out;
+}
+
+.alert.ng-leave-active {
+    opacity: 0;
+}
+
+.msform .action-button{
+	background: #0b3e56;
+	color: #ccc;
+	width: 180px;
+
+	border: 0;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+	font-size: 18px;
+
+	font-family: 'Raleway', sans-serif;
+	-webkit-transition: .6s;
+	transition: .6s;
+	overflow: hidden;
+}
+.msform .action-button:focus{
+	outline: 0;
+}
+.msform .action-button:before{
+	content: '';
+	display: block;
+	position: absolute;
+	background: rgba(255, 255, 255, 0.5);
+	width: 60px;
+	height: 100%;
+	left: 0;
+	top: 0;
+	opacity: .5;
+	-webkit-filter: blur(30px);
+	filter: blur(30px;);
+	-webkit-transform: translateX(-100px) skewX(-15deg);
+	transform: translateX(-100px) skewX(-15deg);
+}
+
+.msform .action-button:after{
+	content: '';
+	display: block;
+	position: absolute;
+	background: rgba(255, 255, 255, .02);
+
+	width: 30px;
+	height: 100%;
+	left: 30px;
+	top: 0;
+	opacity: 0;
+	-webkit-filter: blur(5px);
+	filter: blur(5px);
+	-webkit-transform: translateX(-100px) skewX(-15deg);
+	transform: translateX(-100px) skewX(-15deg);
+}
+
+.msform .action-button:hover{
+	background:rgba(198, 4, 255, 0.6);
+	cursor: pointer;
+}
+
+.msform .action-button:hover:before{
+	-webkit-transform: translateX(300px) skewX(-15deg);
+	transform: translateX(300px) skewX(-15deg);
+	opacity: 0.6;
+	-webkit-transition: .7s;
+	transition: .7s;
+}
+
+.msform .action-button:hover:after{
+	-webkit-transform: translateX(300px) skewX(-15deg);
+	transform: translateX(300px) skewX(-15deg);
+	opacity: 1;
+	-webkit-transition: .7s;
+	transition: .7s.
+}

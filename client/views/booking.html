@@ -1,0 +1,213 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-5" style="margin-top:20px;">
+    <div id="map" ng-init="initMap()"></div>
+    </div>
+		<div class="col-md-6" style="margin-top:20px;">
+			<form class="form" role="form">
+				<div class="form-group row">
+
+					<label for="inputLocation" class="col-sm-3 col-form-label label-left">
+		Location:
+					</label>
+					<div class="col-sm-8 col-sm-offset-1">
+						<input type="text" class="form-control" id="inputLocation" ng-model="Booking.PickupLocation" />
+					</div>
+				</div>
+				<div class="form-group row">
+
+					<label for="inputDestination" class="col-sm-3 col-form-label label-left">
+		Destination:
+					</label>
+					<div class="col-sm-8 col-sm-offset-1">
+						<input type="text" class="form-control" id="inputDestination" ng-model="Booking.DestinationLocation"/>
+					</div>
+				</div>
+
+
+        <div class="form-group row">
+
+					<label for="cabType" class="col-sm-3 col-form-label label-left">
+		Cab Type:
+					</label>
+					<div class="col-sm-8 col-sm-offset-1">
+
+
+            <select id="cabType" class="form-control" ng-model="Booking.CabType">
+          <option>Micro</option>
+          <option>Mini</option>
+          <option>Prime Sedan</option>
+          <option>Prime SUV</option>
+
+
+          </select>
+
+          </div>
+					</div>
+
+          				<div class="form-group row">
+          					<div class="col-sm-offset-6 col-sm-6">
+
+          						<button type="button" class="btn btn-default" ng-click="calcRoute()">
+          							Get Trip Details
+          						</button>
+          					</div>
+									</div>
+									<div class="getestimate" ng-show="GetEstimate">
+										<div class="form-group row">
+
+											<label for="distance" class="col-sm-3 col-form-label label-left">
+										Distance:
+											</label>
+											<div class="col-sm-8 col-sm-offset-1">
+												<input type="text" class="form-control" id="distance" disabled="disabled" />
+											</div>
+										</div>
+										<div class="form-group row">
+
+											<label for="bookingID" class="col-sm-3 col-form-label label-left">
+										Your BookingID:
+											</label>
+											<div class="col-sm-8 col-sm-offset-1">
+												<input type="text" class="form-control" id="bookingID" ng-model="Booking.BookingID" disabled="disabled" />
+											</div>
+										</div>
+										<div class="form-group row">
+
+											<label for="duration" class="col-sm-3 col-form-label label-left">
+										Duration:
+											</label>
+											<div class="col-sm-8 col-sm-offset-1">
+												<input type="text" class="form-control" id="duration" disabled="disabled" />
+											</div>
+										</div>
+										<div class="form-group row">
+
+											<label for="fare" class="col-sm-3 col-form-label label-left">
+										Estimated Fare:
+											</label>
+											<div class="col-sm-8 col-sm-offset-1">
+												<input type="text" class="form-control" id="fare" disabled="disabled" ng-model="Booking.Fare" />
+											</div>
+										</div>
+									</div>
+										<div class="form-group row">
+	          					<div class="col-sm-offset-6 col-sm-6">
+
+	          						<button type="button" ng-show="Booking.Fare" class="btn btn-default" ng-click="BookNow()">
+	          							Book Now
+	          						</button>
+	                      <button type="button" ng-show="Booking.Fare" ng-click="BookLaterButton()" class="btn btn-default" data-toggle="modal" data-target="#myModal5">
+	          							Book Later
+	          						</button>
+	          					</div>
+										</div>
+
+          			</form>
+<div class="bookingnow" ng-show="BookingsNow">
+								<h3><center><u>Driver Details</u></center></h3>
+								<br/><br/>
+
+								<div class="form-group row">
+
+									<label for="drivername" class="col-sm-3 col-form-label label-left">
+								Driver Name:
+									</label>
+									<div class="col-sm-8 col-sm-offset-1">
+										<input type="text" class="form-control" id="drivername" disabled="disabled" />
+									</div>
+								</div>
+								<div class="form-group row">
+
+									<label for="contact" class="col-sm-3 col-form-label label-left">
+								Contact No:
+									</label>
+									<div class="col-sm-8 col-sm-offset-1">
+										<input type="text" class="form-control" id="contact" disabled="disabled" />
+									</div>
+								</div>
+								<div class="form-group row">
+
+									<label for="vehicle" class="col-sm-3 col-form-label label-left">
+								Vehicle
+									</label>
+									<div class="col-sm-8 col-sm-offset-1">
+										<input type="text" class="form-control" id="vehicle" disabled="disabled" />
+									</div>
+								</div>
+							</div>
+								<button type="button" class="btn btn-danger btn-md" ng-show="BookingsNow || BookingsLater" ng-click="DeleteBooking(Booking.BookingID,$event)">
+									Cancel Booking  <span class="glyphicon glyphicon-alert"></span>
+								</button>
+
+
+
+
+          		</div>
+
+
+		<div class="col-md-1">
+	</div>
+
+</div>
+
+
+
+	<div class="modal fade" id="myModal5" role="dialog">
+		<div class="modal-dialog">
+
+
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Advance Booking</h4>
+				</div>
+				<div class="modal-body">
+<form class="form-horizontal">
+					<div class="form-group">
+						<label for="bookingTime" class="col-sm-4 control-label">
+			Enter Booking Time :
+						</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" id="bookingTime" ng-model="Booking.PickUpTime" />
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="bookingDate" class="col-sm-4 control-label">
+			Booking Date:
+						</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" id="bookingDate" ng-model="Booking.PickupDate"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-sm-offset-6 col-sm-6">
+
+							<button type="button" class="btn btn-default" ng-click="BookLaterEstimate()">
+								Get Estimated Fare
+							</button>
+
+						</div>
+					</div>
+					<div class="form-group row">
+
+						<label for="fare" class="col-sm-4 control-label">
+					Estimated Fare:
+						</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" id="fare2" disabled="disabled" ng-model="Booking.Fare" />
+						</div>
+					</div>
+</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="BookLater()" >Confirm Booking</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+.panel-info {
+    border-color: #bcf1cc!important;
+}
+
+.panel-info>.panel-heading {
+    color: #f2dede!important;
+    background-color: #a94442!important;
+    border-color: #bce8f1!important;
+}
+
+.btn-primary {
+    color: #fff!important;
+    background-color: #a94442!important;
+    border-color: #a94442!important;
+}
+.note{
+  margin-bottom: 30px!important;
+  margin-left: 10px!important;
+
+
+}
